@@ -11,7 +11,7 @@ Adminer UI
 - https://hub.docker.com/_/adminer
 
 
-###Usage
+### Usage
     In order to up some specific DB just run    
         `docker-compose up -d <db-container-name>, e.g. docker-compose up -d postgres`
         
