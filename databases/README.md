@@ -1,17 +1,17 @@
-Used docker images
+### Used docker images
 
-    Databases images
+Databases images
 - https://hub.docker.com/r/blacklabelops/hsqldb
 - https://hub.docker.com/_/microsoft-mssql-server
 - https://hub.docker.com/_/mysql
 - https://hub.docker.com/_/postgres
 
 
-    Simple UI
+Adminer UI
 - https://hub.docker.com/_/adminer
 
 
-    Usage 
+###Usage
     In order to up some specific DB just run    
         `docker-compose up -d <db-container-name>, e.g. docker-compose up -d postgres`
         
