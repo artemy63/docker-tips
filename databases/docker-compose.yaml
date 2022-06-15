@@ -3,7 +3,7 @@ version: '3.8'
 services:
     postgres:
       image: postgres:12
-      restart: always
+      restart: unless-stopped
       container_name: postgres-12
       environment:
         - "POSTGRES_DB=docker_pg_db"
@@ -12,23 +12,23 @@ services:
       volumes:
         - ./db-data/postgres-12:/var/lib/postgresql
       ports:
-        - 15432:5432
+        - 25432:5432
 
     mssql:
-      image: mcr.microsoft.com/mssql/server:2017-latest
-      restart: always
-      container_name: mssql-2017
+      image: mcr.microsoft.com/mssql/server:2019-CU14-ubuntu-20.04
+      restart: unless-stopped
+      container_name: mssql-2019
       environment:
         - "ACCEPT_EULA=Y"
-        - "SA_PASSWORD=paSSw0rd123"
+        - "SA_PASSWORD=paSSw0rd123#"
       ports:
-        - 11433:1433
+        - 1433:1433
       volumes:
         - ./db-data/mssql-2017:/var/opt/mssql
 
     mysql:
-      image: mysql:5
-      restart: always
+      image: mysql:5.7.38
+      restart: unless-stopped
       container_name: mysql-5
       ports:
         - 13306:3306
@@ -40,9 +40,23 @@ services:
       volumes:
         - ./db-data/mysql-5:/var/lib/mysql
 
+    mysql8:
+      image: mysql:8.0.29
+      restart: unless-stopped
+      container_name: mysql-8
+      ports:
+        - 23306:3306
+      environment:
+        - "MYSQL_ROOT_PASSWORD=paSSw0rd"
+        - "MYSQL_DATABASE=docker_mysql_db"
+        - "MYSQL_USER=mysql"
+        - "MYSQL_PASSWORD=paSSw0rd"
+      volumes:
+        - ./db-data/mysql-8:/var/lib/mysql
+
     hsqldb:
       image: blacklabelops/hsqldb
-      restart: always
+      restart: unless-stopped
       container_name: hsqldb
       ports:
         - 19001:9001
@@ -57,6 +71,6 @@ services:
     adminer:
       image: adminer:4
       container_name: adminer
-      restart: always
+      restart: unless-stopped
       ports:
         - 8081:8080
