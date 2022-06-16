@@ -1,8 +1,7 @@
 #!/bin/sh
 
-echo 'adding maven2 hosted repository started\n'
-
 #todo more smart way, long polling etc.
+#needed to ensure that nexus ready and can handle requests
 sleep 3m
 
 curl -X 'POST' \
@@ -28,9 +27,4 @@ curl -X 'POST' \
   }
 }'
 
-curl -X 'GET' \
-  'http://localhost:28081/service/rest/v1/repositories/maven/hosted/jmix' \
-  -H 'Authorization: Basic YWRtaW46RmlyZUZveDQyIw==' \
-  -H 'accept: application/json'
-
-echo 'adding maven2 hosted repository finished\n'
+echo "a new maven2 hosted repository 'jmix' registered\n"

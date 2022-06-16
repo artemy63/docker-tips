@@ -10,3 +10,5 @@ services:
     depends_on:
       - nexus
     build: .
+    volumes:
+      - ./export:/root/.haulmont/cli/sdk/export
