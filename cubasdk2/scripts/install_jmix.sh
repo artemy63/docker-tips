@@ -1,11 +1,11 @@
 #!/bin/sh
 
-jmix_version=1.2.3
+cd ${CUBA_SDK_DIR}/cuba-sdk-1.2.6/bin
 
 #init cuba-sdk
-yes '' | ./${CUBA_SDK_DIR}/cuba-sdk-1.2.6/bin/cuba-sdk init
+yes '' | ./cuba-sdk init
 
-#install jmix with required version
-./${CUBA_SDK_DIR}/cuba-sdk-1.2.6/bin/cuba-sdk install jmix $jmix_version
+#install jmix
+./cuba-sdk install jmix ${JMIX_VERSION}
 
-echo 'install_jmix execution finished\n'
+echo 'task install_jmix finished\n'

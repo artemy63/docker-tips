@@ -1,5 +1,7 @@
 #!/bin/sh
 
-./${CUBA_SDK_DIR}/cuba-sdk-1.2.6/bin/cuba-sdk export
+cd ${CUBA_SDK_DIR}/cuba-sdk-1.2.6/bin
 
-echo 'export jmix artifacts finished\n'
+./cuba-sdk export
+
+echo 'task export finished\n'
