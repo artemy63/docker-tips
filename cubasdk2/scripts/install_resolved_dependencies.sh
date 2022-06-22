@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-cd ${CUBA_SDK_DIR}/cuba-sdk-1.2.6/bin
+cd "${CUBA_SDK_DIR}"/cuba-sdk-1.2.6/bin
 
 while IFS= read -r line; do
   ./cuba-sdk install lib $line

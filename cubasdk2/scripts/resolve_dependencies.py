@@ -84,4 +84,4 @@ def collect_spring_boot_dependencies():
 
 if __name__ == '__main__':
     collect_jmix_dependencies()
-    collect_spring_boot_dependencies()
+#     collect_spring_boot_dependencies()
